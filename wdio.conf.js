@@ -191,7 +191,11 @@ exports.config = {
      * @param {Object} suite suite details
      */
      beforeSuite: function (suite) {
-        browser.url('https://www.phptravels.net/');
+        browser.url('https://www.kiwi.com/us/');
+
+        
+
+
     
     },
     /**
