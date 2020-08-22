@@ -7,27 +7,31 @@ class mainPage extends Page{
     get FlightTypeButton(){return $('div=Return')};
     get cancelFromLabel() {return $ ('[data-Test=PlacePickerInputPlace-close]')};
     get fromLabel() {return $ ('[data-Test=SearchPlaceField-origin]')};
-    get toLabel() {return $ ('[data-Test=SearchPlaceField-destination ]')};
-    //PlacePickerInput-destination
-    
+    get toLabel() {return $ ('[data-Test=SearchPlaceField-destination ]')};  //PlacePickerInput-destination
+    get PersonTypeButton(){return $('[data-Test=PassengersField]')};
     get departDateSelector() {return $ ('')};
-    get adultsPlusButton() {return $ ('')};
-    get childsPlusButton() {return $ ('')};
-    get infantPlusButton() {return $ ('')};
+    get adultsPlusButton() {return $('[data-test=PassengersRow-adults]').$('[aria-label=increment]')};
+    get childsPlusButton() {return $('[data-test=PassengersRow-children]').$('[aria-label=increment]')};
+    get infantPlusButton() {return $('[data-test=PassengersRow-infants]').$('[aria-label=increment]')}; ;
+    get doneButton(){return $('div=Done')};
     get searchButton() {return $ ('[data-Test=LandingSearchButton]')};
     get FromToText(){return $('')};
     get availableFlights(){return $$('')};
     //Declaring public  methods to use on other classes 
 
     getFlightTypeButton(){
-        return this.FlightTypeButton.click();
+        return this.FlightTypeButton;
     }
 
     getOneWayFlightButton(){
-        return this.flightType.click();
+        return this.flightType;
     }
     getDeleteInitialFrom(){
-        return this.cancelFromLabel.click();
+        return this.cancelFromLabel;
+    }
+
+    getPersonTypeButton(){
+        return this.PersonTypeButton;
     }
 
 
@@ -56,7 +60,7 @@ class mainPage extends Page{
     }
 
     getSearchButton(){
-        return this.searchButton.click();
+        return this.searchButton;
     }
 
     getValidateFromToLabel(){
@@ -66,6 +70,11 @@ class mainPage extends Page{
     getListAvailableFlights(){
         return this.availableFlights;
     }
+
+    getSelectDoneButton(){
+        return this.doneButton;
+    }
+
 
 }
 

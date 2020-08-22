@@ -191,7 +191,7 @@ exports.config = {
      * @param {Object} suite suite details
      */
      beforeSuite: function (suite) {
-        browser.url('https://www.kiwi.com/us/');
+        browser.url('https://www.kiwi.com/us/landing/-/-?multicity_transport=aircraft&transport=aircraft');
 
         
 
