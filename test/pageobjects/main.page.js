@@ -7,9 +7,13 @@ class mainPage extends Page{
     get FlightTypeButton(){return $('div=Return')};
     get cancelFromLabel() {return $ ('[data-Test=PlacePickerInputPlace-close]')};
     get fromLabel() {return $ ('[data-Test=SearchPlaceField-origin]')};
-    get toLabel() {return $ ('[data-Test=SearchPlaceField-destination ]')};  //PlacePickerInput-destination
+    get fromLabelTextBox() {return $('[data-test=SearchField-input]')};
+    get toLabel() {return $ ('[data-Test=SearchPlaceField-destination ]')}; 
+    get toLabelTextBox(){ return $('[data-test=PlacePickerInput-destination]').$('[data-test=SearchField-input]')};
     get PersonTypeButton(){return $('[data-Test=PassengersField]')};
-    get departDateSelector() {return $ ('')};
+    get departureDateButton() {return $ ('[data-test=SearchDateInput]')};
+    get date() {return $('//body//div[@id="landingPage"]//div//div//div//div//div//div//div//div//div//div//div//div[2]//div[1]//div[3]//div[15]')}; //[data-test=CalendarDay-departureRange]').$('[data-value=2020-09-15]'
+    get submitDateButton() {return $ ('[data-test=SearchFormDoneButton]')};
     get adultsPlusButton() {return $('[data-test=PassengersRow-adults]').$('[aria-label=increment]')};
     get childsPlusButton() {return $('[data-test=PassengersRow-children]').$('[aria-label=increment]')};
     get infantPlusButton() {return $('[data-test=PassengersRow-infants]').$('[aria-label=increment]')}; ;
@@ -39,8 +43,16 @@ class mainPage extends Page{
         return this.fromLabel;
     }
 
+    getFromSearch(){
+        return this.fromLabelTextBox;
+    }
+
     getToTextbox(){
         return this.toLabel;
+    }
+
+    getToSearch(){
+        return this.toLabelTextBox;
     }
 
     getDepartureDate(){
@@ -73,6 +85,16 @@ class mainPage extends Page{
 
     getSelectDoneButton(){
         return this.doneButton;
+    }
+    getSelectDepartureButton(){
+        return this.departureDateButton;
+    }
+
+    getSelectDepartureDate(){
+        return this.date;
+    }
+    getSelectSetDatesButton(){
+        return this.submitDateButton;
     }
 
 
