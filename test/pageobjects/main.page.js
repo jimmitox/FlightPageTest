@@ -10,6 +10,8 @@ class mainPage extends Page{
     get fromLabelTextBox() {return $('[data-test=SearchField-input]')};
     get toLabel() {return $ ('[data-Test=SearchPlaceField-destination ]')}; 
     get toLabelTextBox(){ return $('[data-test=PlacePickerInput-destination]').$('[data-test=SearchField-input]')};
+    get fromCountry(){return $('div=TXL Berlin - Berlin Tegel')};
+    get toCountry(){return $('div=London, United Kingdom')}; 
     get PersonTypeButton(){return $('[data-Test=PassengersField]')};
     get departureDateButton() {return $ ('[data-test=SearchDateInput]')};
     get date() {return $('//body//div[@id="landingPage"]//div//div//div//div//div//div//div//div//div//div//div//div[2]//div[1]//div[3]//div[15]')}; //[data-test=CalendarDay-departureRange]').$('[data-value=2020-09-15]'
@@ -19,8 +21,7 @@ class mainPage extends Page{
     get infantPlusButton() {return $('[data-test=PassengersRow-infants]').$('[aria-label=increment]')}; ;
     get doneButton(){return $('div=Done')};
     get searchButton() {return $ ('[data-Test=LandingSearchButton]')};
-    get FromToText(){return $('')};
-    get availableFlights(){return $$('')};
+ 
     //Declaring public  methods to use on other classes 
 
     getFlightTypeButton(){
@@ -97,6 +98,13 @@ class mainPage extends Page{
         return this.submitDateButton;
     }
 
+    getSelectFromCountry(){
+        return this.fromCountry;
+    }
+    getSelectToCountry(){
+        return this.toCountry;
+    }
+    
 
 }
 
