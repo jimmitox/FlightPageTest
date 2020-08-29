@@ -4,6 +4,9 @@ const Helpers =  require('../helpers/functions');
 const { getFromSearch } = require('../pageobjects/main.page');
 const ResultsFlightsPage = require('../pageobjects/resultsflights.page');
 
+//Comment or Uncomment to Run a case
+
+/*
 describe('Case 1', () => {
     it('should select one-way button', () => {
         browser.setTimeout({'pageLoad': 10000});
@@ -74,6 +77,6 @@ describe('Case 1', () => {
     });
 
 
-});
+});    */
 
 
