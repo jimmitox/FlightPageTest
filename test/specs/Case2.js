@@ -1,8 +1,9 @@
 const Helpers =  require('../helpers/functions');
 const ResultsFlightsPage = require('../pageobjects/resultsflights.page');
 
-//Starting here comment or uncomment code to run this Case /* */
+//Starting here comment or uncomment code to run this Case  */
 
+/*
 describe('Case 2', () => {
     it('should validate results are available when searching', () => {
         //browser.setTimeout({'implicit' : 10000});
@@ -33,9 +34,9 @@ describe('Case 2', () => {
         ResultsFlightsPage.getVisibilityLoadMoreBtn().waitForDisplayed({timeout:30000});   
         expect(ResultsFlightsPage.getVisibilityLoadMoreBtn()).toBeDisplayed();
                 
-    });
+    }); 
 
 
-});
+}); */
 
 

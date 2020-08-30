@@ -8,7 +8,7 @@ class resultsFlights extends Page{
     get busCheckBox(){return $('span=Bus')};
     get trainCheckBox(){return $('span=Train')};
     get busResultsMessage() {return $('p=It looks like you recently applied some filters. Reset them below to get results.')};
-    
+    get bookButtonFirstResult() {return $('[data-test=BookingButton]')}; //('[data-test=1aae22f548760000c0b0013b_0-22f51aae4886000098c441c1_0]').$('span=Book')
 
 //Declaring public  methods to use on other classes 
     getVisibilityLoadMoreBtn(){
@@ -28,7 +28,9 @@ class resultsFlights extends Page{
         return this.busResultsMessage;
     }
 
-
+    getSelectBookButtonFirstResult(){
+        return this.bookButtonFirstResult;
+    }
 
 
 }

@@ -192,14 +192,13 @@ exports.config = {
      */
      beforeSuite: function (suite) {
          //Main URL For Case 1
-        //l('https://www.kiwi.com/us/landing/-/-?multicity_transport=aircraft&transport=aircraft');
+       // browser.url('https://www.kiwi.com/us/landing/-/-?multicity_transport=aircraft&transport=aircraft');
        
         //Main URL For Case 2
-        browser.url('https://www.kiwi.com/us/search/results/berlin-germany/london-united-kingdom/2020-10-01_2020-10-31/2020-10-01_2020-10-31?adults=2&children=1&infants=1&multicity_transport=aircraft');
+        // browser.url('https://www.kiwi.com/us/search/results/berlin-germany/london-united-kingdom/2020-10-01_2020-10-31/2020-10-01_2020-10-31?adults=2&children=1&infants=1&multicity_transport=aircraft');
 
         //Main URL For Case 3
-
-    
+        browser.url('https://www.kiwi.com/us/search/results/berlin-tegel-berlin-germany/london-united-kingdom/2020-10-01_2020-10-31/2020-10-01_2020-10-31');
     },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
