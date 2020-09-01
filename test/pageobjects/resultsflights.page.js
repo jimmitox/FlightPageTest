@@ -1,6 +1,6 @@
 const Page = require("./page");
 
-class resultsFlights extends Page{
+class resultsFlights {
 
 //Declare elemetents to use
     get loadMoreButton(){return $('//div[contains(text(),"Load more")]')}; //div=Load More

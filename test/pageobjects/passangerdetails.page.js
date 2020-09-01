@@ -1,5 +1,5 @@
 
-class passangersDetails{
+class passangersDetails {
 //Declare elemetents to use  
     get contactText(){return $('span=Contact details')};
     get emailTextBox(){return $('[data-test=ContactEmail]')};

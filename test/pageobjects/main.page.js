@@ -1,6 +1,6 @@
 const Page = require("./page");
 
-class mainPage extends Page{
+class mainPage {
 
    //Declare elemetents to use
     get flightType() {return $('p=One-way')}; 

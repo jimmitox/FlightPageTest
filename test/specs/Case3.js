@@ -1,7 +1,7 @@
 const Helpers =  require('../helpers/functions');
 const ResultsFlightsPage = require('../pageobjects/resultsflights.page');
 const PassangerDetails = require('../pageobjects/passangerdetails.page');
-
+const PaymentDetails = require('../pageobjects/payment.page');
 
 //Starting here comment or uncomment code to run this Case /* */
 
@@ -16,11 +16,8 @@ describe('Case 3', () => {
         browser.pause(5000);
     }); 
 
-    it('should fill passanger information and select Continue', () => {
-       // PassangerDetails.getSelectEmailTextBox().waitForClickable({timeout:10000});
-    
-       Helpers.clickElementOnce(PassangerDetails.getSelectEmailTextBox());
-       //browser.pause(10000);   
+    it('should fill passanger information and select Continue', () => {    
+       Helpers.clickElementOnce(PassangerDetails.getSelectEmailTextBox());   
        PassangerDetails.getInputEmail().waitForExist({timeout:10000});
        PassangerDetails.getInputEmail().setValue('starwars@email.com');
        Helpers.clickElementOnce(PassangerDetails.getSelectPhoneTextBox());
@@ -45,12 +42,23 @@ describe('Case 3', () => {
        PassangerDetails.getNotExpireCheckBox().waitForClickable({timeout:10000});
        Helpers.clickElementOnce(PassangerDetails.getNotExpireCheckBox());
        Helpers.clickElementOnce(PassangerDetails.getSelectContinueButton());
-        //Validar en nueva pagina d vonfirmation con el span = Pay now for peace of mind. Save later if you need to make a necessary change to your itinerary. 
-      // browser.pause(10000);
-
-        
-         
+       PaymentDetails.getTextPaymentSpan().waitForDisplayed({timeout:10000});
+       expect (PaymentDetails.getTextPaymentSpan() ).toHaveTextContaining('Pay now for peace of mind');       
+    }); 
+    it('should select ContinueWSaver button and validate element from payment results page', () => {
+        Helpers.clickElementOnce(PaymentDetails.getSelectFareSaverButton());
+        PaymentDetails.getSelectYesButton().waitForClickable({timeout:10000});
+        Helpers.clickElementOnce(PaymentDetails.getSelectYesButton());
+        PaymentDetails.getSelectContinueBasicButton().waitForClickable({timeout:10000});
+        Helpers.clickElementOnce(PaymentDetails.getSelectContinueBasicButton());
+        Helpers.clickElementOnce(PaymentDetails.getSelectContinueButtonCustomizeTripPage());
+        PaymentDetails.getTextInvoiceDetails().waitForDisplayed({timeout:10000});
+        expect (PaymentDetails.getTextInvoiceDetails() ).toHaveText('Invoice details');       
     }); 
 
+    it('should validate passanger name ', () => {
+        PaymentDetails.getPassangerNameDetails().waitForDisplayed({timeout:5000});
+        expect (PaymentDetails.getPassangerNameDetails() ).toHaveTextContaining('Mr Mark');       
+    }); 
 
 });
