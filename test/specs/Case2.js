@@ -3,11 +3,11 @@ const ResultsFlightsPage = require('../pageobjects/resultsflights.page');
 
 //Starting here comment or uncomment code to run this Case  */
 
-/*
+
 describe('Case 2', () => {
     it('should validate results are available when searching', () => {
         //browser.setTimeout({'implicit' : 10000});
-        ResultsFlightsPage.getVisibilityLoadMoreBtn().waitForDisplayed({timeout:30000});   
+        ResultsFlightsPage.getVisibilityLoadMoreBtn().waitForDisplayed({timeout:40000});   
         expect(ResultsFlightsPage.getVisibilityLoadMoreBtn()).toBeDisplayed();
        // console.log('Dinosaur' + ResultsFlightsPage.getVisibilityLoadMoreBtn().getText());
                 
@@ -20,7 +20,7 @@ describe('Case 2', () => {
         ResultsFlightsPage.getSelectTrainCheckBox().waitForDisplayed({timeout:10000});
         Helpers.clickElementOnce(ResultsFlightsPage.getSelectTrainCheckBox());
         //console.log('Rooster' + ResultsFlightsPage.getSelectTrainCheckBox().getText());    
-        ResultsFlightsPage.getBusErrorMessage().waitForDisplayed({timeout:10000});
+        ResultsFlightsPage.getBusErrorMessage().waitForDisplayed({timeout:30000});
         //console.log('Rooster' + '' + ResultsFlightsPage.getBusErrorMessage().getText());
         expect (ResultsFlightsPage.getBusErrorMessage()).toHaveTextContaining('It looks like you recently');
 
@@ -37,6 +37,6 @@ describe('Case 2', () => {
     }); 
 
 
-}); */
+}); 
 
 

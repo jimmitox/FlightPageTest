@@ -6,7 +6,7 @@ const ResultsFlightsPage = require('../pageobjects/resultsflights.page');
 
 //Comment or Uncomment to Run a case
 
-/*
+
 describe('Case 1', () => {
     it('should select one-way button', () => {
         browser.setTimeout({'pageLoad': 10000});
@@ -70,13 +70,13 @@ describe('Case 1', () => {
 
     it('should validate if flights are available', () => {
         
-       ResultsFlightsPage.getVisibilityLoadMoreBtn().waitForDisplayed({timeout:30000});   
+       ResultsFlightsPage.getVisibilityLoadMoreBtn().waitForDisplayed({timeout:40000});   
        expect(ResultsFlightsPage.getVisibilityLoadMoreBtn()).toBeDisplayed();
        //console.log('chaval' + ResultsFlightsPage.getVisibilityLoadMoreBtn().getText());
        
     });
 
 
-});    */
+});    
 
 

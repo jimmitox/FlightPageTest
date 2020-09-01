@@ -16,13 +16,23 @@ exports.config = {
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
-    specs: [
-        './test/specs/**/*.js'
-    ],
+    specs: ['./test/specs/**/*.js'],
+     // define specific suites
+     suites: {
+        Case1: [
+            './test/specs/Case1.js'   
+        ],
+        Case2:[
+            './test/specs/Case2.js'
+        ],
+        Case3:[
+            './test/specs/Case3.js'
+        ],
+    },
+
+      
     // Patterns to exclude.
-    exclude: [
-        // 'path/to/excluded/files'
-    ],
+
     //
     // ============
     // Capabilities
@@ -191,14 +201,15 @@ exports.config = {
      * @param {Object} suite suite details
      */
      beforeSuite: function (suite) {
-         //Main URL For Case 1
-       // browser.url('https://www.kiwi.com/us/landing/-/-?multicity_transport=aircraft&transport=aircraft');
+        browser.maximizeWindow(); 
+        //Main URL For Case 1
+        browser.url('https://www.kiwi.com/us/landing/-/-?multicity_transport=aircraft&transport=aircraft');
        
         //Main URL For Case 2
         // browser.url('https://www.kiwi.com/us/search/results/berlin-germany/london-united-kingdom/2020-10-01_2020-10-31/2020-10-01_2020-10-31?adults=2&children=1&infants=1&multicity_transport=aircraft');
 
         //Main URL For Case 3
-        browser.url('https://www.kiwi.com/us/search/results/berlin-tegel-berlin-germany/london-united-kingdom/2020-10-01_2020-10-31/2020-10-01_2020-10-31');
+        //browser.url('https://www.kiwi.com/us/search/results/berlin-tegel-berlin-germany/london-united-kingdom/2020-10-01_2020-10-31/2020-10-01_2020-10-31');
     },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
